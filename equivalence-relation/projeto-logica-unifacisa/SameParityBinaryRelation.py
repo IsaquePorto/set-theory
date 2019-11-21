@@ -18,7 +18,13 @@ class SameParityBinaryRelation(BinaryRelation):
 
         Return True if the ordered pair belongs to the binary relation, otherwise, return False.
         """
-        pass
+        if x%2 == 0 and y%2==0:
+            return True
+        elif x%2 != 0 and y%2 != 0:
+            return True
+        else:
+            return False
+        
 
     def relation(self, S):
         """
@@ -29,4 +35,10 @@ class SameParityBinaryRelation(BinaryRelation):
 
         Return a set of pairs in SxS (a.k.a. S²) that belong to the binary relation.
         """
-        pass
+        carteziano = set([(x,y) for x in S for y in S])
+        pares = set()
+        for i in carteziano:
+            if self.contains_ordered_pair(i[0],i[1]):
+                pares.add(i)
+        return pares
+        

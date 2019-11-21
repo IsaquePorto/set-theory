@@ -17,6 +17,13 @@ class BinaryRelationUtils(object):
         Return True if the binary relation in the given input set is reflexive
         or False if it is not.
         """
+
+        rho = binary_relation.relation(input_set)
+        for x in input_set:
+            if (x, x) not in rho:
+                return False
+        return True
+
         # TODO: Replace line below with actual code.
         pass
 
@@ -33,6 +40,15 @@ class BinaryRelationUtils(object):
         Return True if the binary relation in the given input set is symmetric
         or False if it is not.
         """
+
+        rho = binary_relation.relation(input_set)
+
+        for x in input_set:
+            for y in input_set:
+                if (x, y) in rho and (y, x) not in rho:
+                    return False
+                
+        return True
         # TODO: Replace line below with actual code.
         pass
 
@@ -50,6 +66,14 @@ class BinaryRelationUtils(object):
         or False if it is not.
         """
         # TODO: Replace line below with actual code.
+        rho = binary_relation.relation(input_set)
+
+        for x in input_set:
+            for y in input_set:
+                for z in input_set:
+                    if (x, y) in rho and (y, z) in rho and (x, z) not in rho:
+                        return False
+        return True
         pass
 
     @staticmethod
@@ -66,6 +90,14 @@ class BinaryRelationUtils(object):
         antisymmetric or False if it is not.
         """
         # TODO: Replace line below with actual code.
+        rho = binary_relation.relation(input_set)
+
+        for x in input_set:
+            for y in input_set:
+                if (x, y) in rho and (y, x) in rho and x != y:
+                    return False
+
+        return True
         pass
 
     @staticmethod
@@ -81,7 +113,9 @@ class BinaryRelationUtils(object):
         Return True if the binary relation in the given input set is 
         an equivalence relation or False if it is not.
         """
+
         # TODO: Replace line below with actual code.
+        return BinaryRelationUtils.verify_symmetry(binary_relation, input_set)and BinaryRelationUtils.verify_reflexivity(binary_relation, input_set) and BinaryRelationUtils.verify_transitivity(binary_relation, input_set)
         pass
 
     @staticmethod
@@ -97,6 +131,17 @@ class BinaryRelationUtils(object):
         input_set - A set closed under the binary relation.
 
         Return None if the binary relation is not an equivalence relation or a partitioning of the input set (e.g.: [{1, 3, 5, ...}, {2, 4, 6, ...}]) if it is an equivalence relation.
+        
+
+        partitions = []
+        rho = binary_relation.relation(input_set)
+        elements = list(input_set)
+        while elements != 0:
+            next = elements[0]
+        
+        se ja extiste uma partição à qual "next" pertence, adicione "next" à partição
+        ao contrario crie uma nova partição contendo "next
+
+         TODO: Replace line below with actual code.
         """
-        # TODO: Replace line below with actual code.
         return []

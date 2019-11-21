@@ -64,7 +64,7 @@ class BinaryRelationTest(unittest.TestCase):
         self.assertTrue(
             self.first_letter_relation.contains_ordered_pair("Alice", "Andre"))
         self.assertFalse(
-            self.first_letter_relation.contains_ordered_pair("Alice", "Bruno"))
+             self.first_letter_relation.contains_ordered_pair("Alice", "Bruno"))
         self.assertTrue(
             self.greater_than_relation.contains_ordered_pair(500, 100))
         self.assertFalse(
